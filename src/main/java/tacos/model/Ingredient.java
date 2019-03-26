@@ -7,7 +7,7 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class Ingredient {
 
-	private final int id;
+	private final String id;
 	private final String name;
 	private final IngredientType type;
 	

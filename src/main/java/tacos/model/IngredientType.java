@@ -6,5 +6,5 @@ public enum IngredientType
 	PROTEIN,
 	VEGGIE,
 	CHEESE,
-	SAUSE
+	SAUCE
 }
