@@ -48,18 +48,14 @@ public class DesignTacoController
 
 		model.addAttribute("design", new Taco());
 
-		return "design";
+		return "designForm";
 	}
 
 	@PostMapping
 	public String postDesign(@Valid Taco design, Errors errors)
 	{
 		log.info("Processing design: " + design.toString());
-		if (errors.hasErrors())
-		{
-			return "redirect:/design";
-		}
-		return "redirect:/orders/current";
+		return errors.hasErrors() ? "redirect:/design" : "redirect:/orders/current";
 	}
 
 }
