@@ -3,22 +3,30 @@ package tacos.controller;
 import java.util.Arrays;
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import lombok.extern.slf4j.Slf4j;
 import tacos.model.Ingredient;
 import tacos.model.IngredientType;
 import tacos.model.Taco;
 import tacos.util.CollectionUtils;
 
+@Slf4j
 @Controller
 @RequestMapping(path = "/design")
-public class DesignTacoController {
+public class DesignTacoController
+{
 
 	@GetMapping
-	public String showDesignForm(Model model) {
+	public String showDesignForm(Model model)
+	{
 		List<Ingredient> ingredients = Arrays.asList(new Ingredient("FLTO", "Flour Tortilla", IngredientType.WRAP),
 				new Ingredient("COTO", "Corn Tortilla", IngredientType.WRAP),
 				new Ingredient("GRBF", "Ground Beef", IngredientType.PROTEIN),
@@ -32,7 +40,8 @@ public class DesignTacoController {
 
 		IngredientType[] types = IngredientType.values();
 
-		for (IngredientType ingredientType : types) {
+		for (IngredientType ingredientType : types)
+		{
 			model.addAttribute(ingredientType.toString().toLowerCase(),
 					CollectionUtils.filterByType(ingredients, ingredientType));
 		}
@@ -40,7 +49,17 @@ public class DesignTacoController {
 		model.addAttribute("design", new Taco());
 
 		return "design";
+	}
 
+	@PostMapping
+	public String postDesign(@Valid Taco design, Errors errors)
+	{
+		log.info("Processing design: " + design.toString());
+		if (errors.hasErrors())
+		{
+			return "redirect:/design";
+		}
+		return "redirect:/orders/current";
 	}
 
 }
