@@ -1,6 +1,6 @@
 package tacos.controller;
 
-import java.util.Arrays;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.validation.Valid;
@@ -12,7 +12,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import tacos.dao.IngredientRepositoryJDBCImpl;
 import tacos.model.Ingredient;
 import tacos.model.IngredientType;
 import tacos.model.Taco;
@@ -20,23 +22,32 @@ import tacos.util.CollectionUtils;
 
 @Slf4j
 @Controller
+@RequiredArgsConstructor
 @RequestMapping(path = "/design")
 public class DesignTacoController
 {
 
+	private final IngredientRepositoryJDBCImpl ingredientRepo;
+
 	@GetMapping
 	public String showDesignForm(Model model)
 	{
-		List<Ingredient> ingredients = Arrays.asList(new Ingredient("FLTO", "Flour Tortilla", IngredientType.WRAP),
-				new Ingredient("COTO", "Corn Tortilla", IngredientType.WRAP),
-				new Ingredient("GRBF", "Ground Beef", IngredientType.PROTEIN),
-				new Ingredient("CARN", "Carnitas", IngredientType.PROTEIN),
-				new Ingredient("TMTO", "Diced Tomatoes", IngredientType.VEGGIE),
-				new Ingredient("LETC", "Lettuce", IngredientType.VEGGIE),
-				new Ingredient("CHED", "Cheddar", IngredientType.CHEESE),
-				new Ingredient("JACK", "Monterrey Jack", IngredientType.CHEESE),
-				new Ingredient("SLSA", "Salsa", IngredientType.SAUCE),
-				new Ingredient("SRCR", "Sour Cream", IngredientType.SAUCE));
+		/*
+		 * List<Ingredient> ingredients = Arrays.asList(new Ingredient("FLTO",
+		 * "Flour Tortilla", IngredientType.WRAP), new Ingredient("COTO",
+		 * "Corn Tortilla", IngredientType.WRAP), new Ingredient("GRBF", "Ground Beef",
+		 * IngredientType.PROTEIN), new Ingredient("CARN", "Carnitas",
+		 * IngredientType.PROTEIN), new Ingredient("TMTO", "Diced Tomatoes",
+		 * IngredientType.VEGGIE), new Ingredient("LETC", "Lettuce",
+		 * IngredientType.VEGGIE), new Ingredient("CHED", "Cheddar",
+		 * IngredientType.CHEESE), new Ingredient("JACK", "Monterrey Jack",
+		 * IngredientType.CHEESE), new Ingredient("SLSA", "Salsa",
+		 * IngredientType.SAUCE), new Ingredient("SRCR", "Sour Cream",
+		 * IngredientType.SAUCE));
+		 */
+
+		List<Ingredient> ingredients = new ArrayList<>();
+		ingredientRepo.findAll().forEach(ingredient -> ingredients.add(ingredient));
 
 		IngredientType[] types = IngredientType.values();
 

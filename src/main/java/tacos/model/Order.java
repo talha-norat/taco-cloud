@@ -3,6 +3,8 @@ package tacos.model;
 import static tacos.util.StringUtils.CC_EXPIRATION_PATTERN;
 import static tacos.util.StringUtils.LETTERS_ONLY_REGEX;
 
+import java.sql.Date;
+
 import javax.validation.constraints.Digits;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
@@ -16,6 +18,10 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor()
 public class Order
 {
+
+	private Long id;
+
+	private Date orderDate;
 
 	@Size(min = 3, max = 30, message = "First name must be between 3-30 characters in length")
 	@Pattern(regexp = LETTERS_ONLY_REGEX, message = "First name must only contain letters")
@@ -42,4 +48,5 @@ public class Order
 
 	@Digits(integer = 3, fraction = 0, message = "Invalid CVV")
 	private String ccCVC;
+
 }
