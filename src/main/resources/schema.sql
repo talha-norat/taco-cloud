@@ -22,23 +22,23 @@ alter table Taco_Ingredients
 
 create table if not exists Taco_Order (
   id identity,
-    deliveryName varchar(50) not null,
-    deliveryStreet varchar(50) not null,
-    deliveryCity varchar(50) not null,
-    deliveryState varchar(2) not null,
-    deliveryZip varchar(10) not null,
+    firstName varchar(30) not null,
+    surname varchar(30) not null,
+    addressLine varchar(50) not null,
+    city varchar(30) not null,
+    postcode varchar(10) not null,
     ccNumber varchar(16) not null,
     ccExpiration varchar(5) not null,
-    ccCVV varchar(3) not null,
-    placedAt timestamp not null
+    ccCVC varchar(3) not null,
+    orderDate timestamp not null
 );
 
 create table if not exists Taco_Order_Tacos (
-  tacoOrder bigint not null,
-  taco bigint not null
+  orderId bigint not null,
+  tacoId bigint not null
 );
 
 alter table Taco_Order_Tacos
-    add foreign key (tacoOrder) references Taco_Order(id);
+    add foreign key (orderId) references Taco_Order(id);
 alter table Taco_Order_Tacos
-    add foreign key (taco) references Taco(id);
+    add foreign key (tacoId) references Taco(id);

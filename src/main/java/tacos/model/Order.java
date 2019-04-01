@@ -3,7 +3,9 @@ package tacos.model;
 import static tacos.util.StringUtils.CC_EXPIRATION_PATTERN;
 import static tacos.util.StringUtils.LETTERS_ONLY_REGEX;
 
-import java.sql.Date;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 
 import javax.validation.constraints.Digits;
 import javax.validation.constraints.Pattern;
@@ -15,7 +17,7 @@ import lombok.Data;
 import lombok.RequiredArgsConstructor;
 
 @Data
-@RequiredArgsConstructor()
+@RequiredArgsConstructor
 public class Order
 {
 
@@ -49,4 +51,9 @@ public class Order
 	@Digits(integer = 3, fraction = 0, message = "Invalid CVV")
 	private String ccCVC;
 
+	private List<Taco> tacos = new ArrayList<>();
+	
+	public void addTaco(Taco taco) {
+		tacos.add(taco);
+	};
 }
