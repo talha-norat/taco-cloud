@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org.1999/xhtml"
+	  xmlns:th="http://www.thymeleaf.org">
+	  
+	  <head>
+	  	<title>Taco Cloud</title>
+	  </head>
+	  
+	  <body>
+	  		<form method="POST" th:action="@{/ingredients}" th:object="${ingredient}">
+			  	<h1>ADD NEW INGREDIENT</h1>
+			  
+			  	<div>
+				  	<h3>Choose a 4 character identification for the ingredient</h3>
+				  	<input name="identifier" type = "text" th:field="*{id}"/>
+				  	<br><br>
+				  	<h3>Choose a name for the ingredient</h3>
+				  	<input name= "name" type = "text" th:field="*{name}"/>
+				  	<br><br>
+				  	<h3>Choose the type of Ingredient</h3>
+					  	<select th:field="*{type}">
+					  		<option th:each="ingredientType : ${IngredientTypes}"
+					  				th:text="${ingredientType}"
+					  				th:value="${ingredientType}"/>
+					  	</select>  	
+				  	<br><br>
+			  	</div>
+		  
+		  		<input type="submit" value="Add Ingredient" />
+		  	
+				<a href = "/design">
+			  		<button>Go To Design Page</button>
+			    </a>
+			</form>
+	  </body>
+</html>

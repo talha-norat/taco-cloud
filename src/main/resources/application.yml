@@ -1,14 +1,20 @@
 project:
   base-dir: file:///P:/git/taco-cloud
+server:
+  port: 8080
 spring:
-  h2:
-    console:
-      enabled: true
-      path: /h2-console
+  datasource:
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+    password: kramer
+    url: jdbc:sqlserver://localhost;databaseName=TacoDB
+    username: sa
   jpa:
     hibernate:
-      naming:
-        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.SQLServer2012Dialect
+    show-sql: true
   thymeleaf:
     cache: false
     prefix: ${project.base-dir}/src/main/resources/templates/
