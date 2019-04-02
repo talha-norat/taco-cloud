@@ -27,7 +27,7 @@ import tacos.util.CollectionUtils;
 @Slf4j
 @Controller
 @RequiredArgsConstructor
-@RequestMapping(path = "/design")
+@RequestMapping("/design")
 @SessionAttributes("order")
 public class DesignTacoController
 {

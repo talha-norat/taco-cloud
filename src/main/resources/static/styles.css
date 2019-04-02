@@ -5,3 +5,30 @@ span.validationError {
 grid {
 	font-size: 10px
 }
+
+.banner{
+	background-color: black;
+	height: 100px;
+	width : 100%;
+	margin-top: 0px;
+}
+
+.bannerHeader{
+	margin: -10px;
+	text-align: center;
+	padding-top: 30px;
+	color: white;
+}
+
+.mainBody{
+	width: 250px;
+	margin-left: 44%;
+}
+
+.outerBody{
+	width: 100%;
+}
+
+.formButton{
+	margin-left: 100%;
+}

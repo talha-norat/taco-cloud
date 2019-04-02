@@ -4,21 +4,25 @@
 	  
 	  <head>
 	  	<title>Taco Cloud</title>
+	  	<link rel="stylesheet" th:href="@{/styles.css}" />
 	  </head>
 	  
 	  <body>
 	  		<form method="POST" th:action="@{/ingredients}" th:object="${ingredient}">
-			  	<h1>ADD NEW INGREDIENT</h1>
+	  		
+	  			<div class = "banner">
+			  		<h1 class= "bannerHeader">ADD NEW INGREDIENT</h1>	  			
+	  			</div><br/>
 			  
 			  	<div>
-				  	<h3>Choose a 4 character identification for the ingredient</h3>
+				  	<label for= "identifier">Ingredient Identifier: </label>
 				  	<input name="identifier" type = "text" th:field="*{id}"/>
 				  	<br><br>
-				  	<h3>Choose a name for the ingredient</h3>
+				  	<label for = "name">Ingredient Name: </label>
 				  	<input name= "name" type = "text" th:field="*{name}"/>
 				  	<br><br>
-				  	<h3>Choose the type of Ingredient</h3>
-					  	<select th:field="*{type}">
+				  	<label for = "types">Ingredient Type: </label>
+					  	<select th:field="*{type}" name="types">
 					  		<option th:each="ingredientType : ${IngredientTypes}"
 					  				th:text="${ingredientType}"
 					  				th:value="${ingredientType}"/>

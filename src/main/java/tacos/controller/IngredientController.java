@@ -32,14 +32,14 @@ public class IngredientController {
 		
 		model.addAttribute("ingredient", new Ingredient());
 		
-		return "AddIngredient";
+		return "addIngredient";
 	}
 	
 	@PostMapping
 	public String addNewIngredient(@Valid Ingredient ingredient, Errors errors, Model model) {
 		
 		if(errors.hasErrors()) {
-			return "AddIngredient";
+			return "addIngredient";
 		}
 		
 		ingredientRepository.save(ingredient);

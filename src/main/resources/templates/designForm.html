@@ -2,9 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
 <title>Taco Cloud</title>
+<link rel="stylesheet" th:href="@{/styles.css}" />
 </head>
 <body>
-	<h1>Design your taco!</h1>
+	<div class="banner">
+		<h1 class = "bannerHeader">Design your taco</h1>
+	</div>
 	<form method="POST" th:action="@{/design}" th:object="${design}">
 		<div class="grid">
 			<div class="ingredient-group" id="wraps">
