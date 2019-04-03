@@ -20,17 +20,19 @@
     <!-- tag::thAction[] -->
     <form class = "mainBody" method="POST" th:action="@{/login}" id="loginForm">
     <!-- end::thAction[] -->
-    
-      <p>New here? Click 
-       		<a th:href="@{/register}">here</a> to register.</p>
+    	<br/><br/><br>
 
-      <label for="username">Username: </label>
-      <input type="text" name="username" id="username" /><br/><br>
+      <label class = "labels" for="username">Username: </label>
+      <input class = "textField" type="text" name="username" id="username" /><br/><br>
       
-      <label for="password">Password: </label>
-      <input type="password" name="password" id="password" /><br/><br>
+      <label class = "labels" for="password">Password: </label>
+      <input class = "textField" type="password" name="password" id="password" /><br/><br>
       
-      <input class = "formButton" type="submit" value="Login"/>
+      <input class = "submit" type="submit" value="Login"/>
+      
+      <br/><br/>
+      <p class = "message">New here? Click 
+       		<a th:href="@{/register}">here</a> to register.</p>
     </form>
     </div>
   </body>

@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
 import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import tacos.dao.IngredientRepository;
 import tacos.dao.TacoRepository;
 import tacos.model.Ingredient;
@@ -24,7 +23,6 @@ import tacos.model.Order;
 import tacos.model.Taco;
 import tacos.util.CollectionUtils;
 
-@Slf4j
 @Controller
 @RequiredArgsConstructor
 @RequestMapping("/design")

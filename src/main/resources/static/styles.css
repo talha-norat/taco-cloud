@@ -2,33 +2,83 @@ span.validationError {
 	color: #ff0000
 }
 
-grid {
-	font-size: 10px
+body{
+	width:100%;
+	font-family: Arial, Helvetica, sans-serif;
+	text-align: center;
+}
+
+.grid {
+	font-size: 20px;
+	text-align: center;
+}
+
+.ingredient-group{
+	margin: auto;
 }
 
 .banner{
-	background-color: black;
+	background-color: #050c3f;
 	height: 100px;
 	width : 100%;
-	margin-top: 0px;
+	font-size: 50px;
 }
 
 .bannerHeader{
 	margin: -10px;
+	height: 10px;
 	text-align: center;
-	padding-top: 30px;
+	padding-top: 10px;
 	color: white;
 }
 
 .mainBody{
-	width: 250px;
-	margin-left: 44%;
+	width: 500px;
+	height: 450px;
+	border: 2px solid black;
+	border-radius: 15px;
+	margin: auto;
+	margin-top: 10px;
+	text-align: center;
 }
 
 .outerBody{
 	width: 100%;
+	text-align: center;
 }
 
 .formButton{
-	margin-left: 100%;
+	margin-left: 60%;
+}
+
+.submit{
+	height: 50px;
+	width: 95%;
+	font-size: 18px;
+	font-weight: bold;
+	border: 2px solid #4CAF50;
+	margin: auto;
+	margin-top: 10px;
+	border-radius: 25px;
+}
+
+.textField{
+	font-size: 40px;
+	border-radius: 5px;
+	margin: auto;
+	text-align: centre;
+}
+
+.labels{
+	width: 200px;
+	margin: auto;
+	font-size: 40px;
+	text-align: center;
+	font-weight: bold;
+}
+
+.message{
+	text-align: center;
+	font-size: 25px;
+	margin-top: 50px;
 }

@@ -6,7 +6,7 @@
 </head>
 <body>
 	<div class="banner">
-		<h1 class = "bannerHeader">Design your taco</h1>
+		<h1 class = "bannerHeader">Design Your Taco</h1>
 	</div>
 	<form method="POST" th:action="@{/design}" th:object="${design}">
 		<div class="grid">
@@ -54,8 +54,8 @@
 		<div>
 			<h3>Name your taco creation:</h3>
 			<input type="text" th:field="*{name}" />
-			<br />
-			<button>Submit your taco</button>
+			<br/><br>
+			<button class = "submit" >Submit your taco</button>
 		</div>
 	</form>
 </body>

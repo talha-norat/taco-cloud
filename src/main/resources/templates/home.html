@@ -1,24 +1,22 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org.1999/xhtml"
 	  xmlns:th="http://www.thymeleaf.org">
-	  
-	  <head>
-	  	<title>Taco Cloud</title>
-	  	<link rel="stylesheet" th:href="@{/styles.css}" />
-	  </head>
-	  
-	  <div class = "banner">
-	  	<h1 class = "bannerHeader">Welcome</h1>
-	  </div><br/>
-	  
-	  <a href="/ingredients">
-	  	<button>Add new Ingredient</button>
-	  </a>
-	  <br><br>
-	  
-	  <a href = "/design">
-	  	<button>Go To Design Page</button>
-	  </a>
-	  
-	  
+<head>
+<title>Taco Cloud</title>
+<link rel="stylesheet" th:href="@{/styles.css}" />
+</head>
+<body>
+	<div class="banner">
+		<h1 class="bannerHeader">Welcome</h1>
+	</div>
+	<br />
+	<a href="/ingredients">
+		<button class="submit">Add new Ingredient</button>
+	</a>
+	<br>
+	<br>
+	<a href="/design">
+		<button class="submit">Go To Design Page</button>
+	</a>
+</body>
 </html>

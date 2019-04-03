@@ -1,7 +1,7 @@
 project:
   base-dir: file:///P:/git/taco-cloud
 server:
-  port: 8080
+  port: 8100
 spring:
   datasource:
     driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
