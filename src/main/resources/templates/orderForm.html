@@ -14,7 +14,7 @@
 		<div th:if="${#fields.hasErrors()}">
 			<span class="validationError"> Please correct the problems below and resubmit. </span>
 		</div>
-		<div>
+		<div class= "mainBody">
 			<h3>Deliver my taco masterpieces to...</h3>
 			<label for="firstName">First Name: </label>
 			<input type="text" th:field="*{firstName}" />
@@ -57,7 +57,7 @@
 			<span class="validationError" th:if="${#fields.hasErrors('ccCVC')}" th:errors="*{ccCVC}">Security CVC Error</span>
 			<br />
 			<br />
-			<input type="submit" value="Submit order" />
+			<input class="submit" type="submit" value="Submit order" />
 		</div>
 	</form>
 </body>

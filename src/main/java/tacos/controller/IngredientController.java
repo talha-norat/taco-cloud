@@ -39,7 +39,7 @@ public class IngredientController {
 	public String addNewIngredient(@Valid Ingredient ingredient, Errors errors, Model model) {
 		
 		if(errors.hasErrors()) {
-			return "addIngredient";
+			return "redirect:/ingredients";
 		}
 		
 		ingredientRepository.save(ingredient);

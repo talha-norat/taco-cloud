@@ -11,6 +11,12 @@ body{
 .grid {
 	font-size: 20px;
 	text-align: center;
+	width: 500px;
+	margin: auto;
+	border: 2px solid black;
+	border-radius: 15px;
+	padding: 10px;
+	margin-top: 10px;
 }
 
 .ingredient-group{
@@ -40,6 +46,8 @@ body{
 	margin: auto;
 	margin-top: 10px;
 	text-align: center;
+	overflow-y: auto;
+	padding: 20px;
 }
 
 .outerBody{
@@ -81,4 +89,61 @@ body{
 	text-align: center;
 	font-size: 25px;
 	margin-top: 50px;
+}
+
+.registerForm{
+	width: 750px;
+	height: 665px;
+	border: 2px solid black;
+	margin: auto;
+	margin-top:10px;
+	border-radius: 10px;
+	font-size: 23px;
+	padding: 10px;
+}
+
+input{
+	font-size: 30px;
+}
+
+.registerForm label{
+	font-weight: bold;
+}
+
+.addIngredientForm .submit{
+	margin-top: 0px;
+	font-size: 30px;
+}
+
+.addIngredientForm{
+	width: 750px;
+	height: 325px;
+	border: 2px solid black;
+	margin: auto;
+	margin-top:10px;
+	border-radius: 10px;
+	font-size: 23px;
+	padding: 10px;
+}
+
+.ingredientType{
+	width: 200px;
+	font-size: 30px;
+	color: white;
+	background-color: #050c3f;
+	border-radius: 20px;
+	text-align: center;
+	padding-left: 20px;
+}
+
+.checkbox input{
+	margin-top: 15px;
+}
+
+.grid h3{
+	margin-bottom: 0px;
+}
+
+::-webkit-scrollbar {
+  width: 3px;
 }

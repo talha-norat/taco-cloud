@@ -1,5 +1,5 @@
 project:
-  base-dir: file:///P:/git/taco-cloud
+    base-dir: file:///P:/git/taco-cloud
 server:
   port: 8100
 spring:
