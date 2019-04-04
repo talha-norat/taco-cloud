@@ -7,11 +7,6 @@ spring:
       prefix: classpath:/templates/
    resources:
       static-locations: classpath:/static/
-      
-logging:
-   file: C:\Users\noratt\Documents\Logging\taco-cloud\tacoCloud.log
-   level:
-      ROOT: INFO
 
 server:
   port: 8100
@@ -32,6 +27,11 @@ spring:
          hibernate:
            dialect: org.hibernate.dialect.SQLServer2012Dialect
       show-sql: true
+      
+logging:
+   file: C:\Users\noratt\Documents\Logging\taco-cloud\tacoCloud.log
+   level:
+      ROOT: INFO
       
 ---
 spring:
