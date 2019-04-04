@@ -14,9 +14,11 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>taco-cloud</name>
 	<description>Spring boot Taco cloud project</description>
+	<packaging>war</packaging>
 
 	<properties>
 		<java.version>1.8</java.version>
+      	<start-class>tacos.TacoCloudApplication</start-class>
 	</properties>
 
 	<dependencies>
@@ -38,6 +40,11 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-tomcat</artifactId>
+			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.projectlombok</groupId>
@@ -63,9 +70,9 @@
 			<scope>runtime</scope>
 		</dependency>
 		<dependency>
-           <groupId>com.microsoft.sqlserver</groupId>
-           <artifactId>mssql-jdbc</artifactId>
-       </dependency>
+			<groupId>com.microsoft.sqlserver</groupId>
+			<artifactId>mssql-jdbc</artifactId>
+		</dependency>
 	</dependencies>
 
 	<build>
