@@ -25,7 +25,7 @@ public class IngredientController {
 
 	private final IngredientRepository ingredientRepository;
 	
-	@GetMapping()
+	@GetMapping
 	public String showAddIngredientPage(Model model) {
 		List<IngredientType> ingredientTypes = new ArrayList<IngredientType>(EnumSet.allOf(IngredientType.class));
 		model.addAttribute("IngredientTypes", ingredientTypes);

@@ -5,59 +5,68 @@
 <link rel="stylesheet" th:href="@{/styles.css}" />
 </head>
 <body>
-	<form method="POST" th:action="@{/orders}" th:object="${order}">
-		<div class = "banner">
-			<h1 class = "bannerHeader">Place Order</h1>
-		</div><br/>
+	<form method="POST" th:action="@{/logout}" id="logoutForm"></form>
+	<form method="POST" th:action="@{/orders}" th:object="${order}" id="orderForm">
+		<div class="banner">
+			<h1 class="bannerHeader">Place Order</h1>
+			<br />
+			<input class="logout" type="submit" value="Logout" form="logoutForm" />
+		</div>
+		<br />
 		<a th:href="@{/design}" id="another">Design another taco</a>
 		<br />
 		<div th:if="${#fields.hasErrors()}">
 			<span class="validationError"> Please correct the problems below and resubmit. </span>
 		</div>
-		<div class= "mainBody">
+		<div class="mainBody">
 			<h3>Deliver my taco masterpieces to...</h3>
-			<label for="firstName">First Name: </label>
-			<input type="text" th:field="*{firstName}" />
-			<span class="validationError" th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}">First Name Error</span>
-			<br />
-			<br />
-			<label for="surname">Surname: </label>
-			<input type="text" th:field="*{surname}" />
-			<span class="validationError" th:if="${#fields.hasErrors('surname')}" th:errors="*{surname}">Surname Error</span>
-			<br />
-			<br />
-			<label for="addressLine">Street address: </label>
-			<input type="text" th:field="*{addressLine}" />
-			<span class="validationError" th:if="${#fields.hasErrors('addressLine')}" th:errors="*{addressLine}">Address Error</span>
-			<br />
-			<br />
-			<label for="city">City: </label>
-			<input type="text" th:field="*{city}" />
-			<span class="validationError" th:if="${#fields.hasErrors('city')}" th:errors="*{city}">City Error</span>
-			<br />
-			<br />
-			<label for="postcode">Postcode: </label>
-			<input type="text" th:field="*{postcode}" />
-			<span class="validationError" th:if="${#fields.hasErrors('postcode')}" th:errors="*{postcode}">Postcode Error</span>
-			<br />
-			<br />
+			<div class=detailsLabels>
+				<label class="detailsLabel" for="firstName">First Name: </label> <label class="detailsLabel" for="surname">Surname: </label> <label
+					class="detailsLabel" for="addressLine">Street address: </label> <label class="detailsLabel" for="city">City: </label> <label class="detailsLabel"
+					for="postcode">Postcode: </label>
+			</div>
+			<div class="detailsTextFields">
+				<input class="detailsTextField" type="text" th:field="*{firstName}" />
+				<span class="validationError" th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}">First Name Error</span>
+				<br />
+				<br />
+				<input class="detailsTextField" type="text" th:field="*{surname}" />
+				<span class="validationError" th:if="${#fields.hasErrors('surname')}" th:errors="*{surname}">Surname Error</span>
+				<br />
+				<br />
+				<input class="detailsTextField" type="text" th:field="*{addressLine}" />
+				<span class="validationError" th:if="${#fields.hasErrors('addressLine')}" th:errors="*{addressLine}">Address Error</span>
+				<br />
+				<br />
+				<input class="detailsTextField" type="text" th:field="*{city}" />
+				<span class="validationError" th:if="${#fields.hasErrors('city')}" th:errors="*{city}">City Error</span>
+				<br />
+				<br />
+				<input class="detailsTextField" type="text" th:field="*{postcode}" />
+				<span class="validationError" th:if="${#fields.hasErrors('postcode')}" th:errors="*{postcode}">Postcode Error</span>
+				<br />
+			</div>
 			<h3>Here's how I'll pay...</h3>
-			<label for="ccNumber">Credit Card #: </label>
-			<input type="text" th:field="*{ccNumber}" />
-			<span class="validationError" th:if="${#fields.hasErrors('ccNumber')}" th:errors="*{ccNumber}">CC Num Error</span>
 			<br />
+			<div class="ccLabels">
+				<label class="ccLabel" for="ccNumber">Credit Card #: </label> <label class="ccLabel" for="ccExpiration">Expiration: </label> <label
+					class="ccLabel" for="ccCVC">CVC: </label>
+			</div>
+			<div class="ccTextFields">
+				<input class="ccTextField" type="text" th:field="*{ccNumber}" />
+				<span class="validationError" th:if="${#fields.hasErrors('ccNumber')}" th:errors="*{ccNumber}">CC Num Error</span>
+				<br />
+				<br />
+				<input class="ccTextField" type="text" th:field="*{ccExpiration}" />
+				<span class="validationError" th:if="${#fields.hasErrors('ccExpiration')}" th:errors="*{ccExpiration}">CC Expiration Date Error</span>
+				<br />
+				<br />
+				<input class="ccTextField" type="text" th:field="*{ccCVC}" />
+				<span class="validationError" th:if="${#fields.hasErrors('ccCVC')}" th:errors="*{ccCVC}">Security CVC Error</span>
+				<br />
+			</div>
 			<br />
-			<label for="ccExpiration">Expiration: </label>
-			<input type="text" th:field="*{ccExpiration}" />
-			<span class="validationError" th:if="${#fields.hasErrors('ccExpiration')}" th:errors="*{ccExpiration}">CC Expiration Date Error</span>
-			<br />
-			<br />
-			<label for="ccCVC">CVC: </label>
-			<input type="text" th:field="*{ccCVC}" />
-			<span class="validationError" th:if="${#fields.hasErrors('ccCVC')}" th:errors="*{ccCVC}">Security CVC Error</span>
-			<br />
-			<br />
-			<input class="submit" type="submit" value="Submit order" />
+			<input class="submit" type="submit" value="Submit order" form="orderForm" />
 		</div>
 	</form>
 </body>

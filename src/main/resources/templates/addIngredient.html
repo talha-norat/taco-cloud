@@ -1,16 +1,21 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org.1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
 <head>
-<title>Taco Cloud</title>
-<link rel="stylesheet" th:href="@{/styles.css}" />
+	<title>Taco Cloud</title>
+	<link rel="stylesheet" th:href="@{/styles.css}" />
 </head>
+
 <body>
-	<form method="POST" th:action="@{/ingredients}" th:object="${ingredient}">
-		<div class="banner">
-			<h1 class="bannerHeader">Add Ingredient</h1>
-		</div>
-		<br />
-		<div class="addIngredientForm">
+	<form method="POST" th:action="@{/logout}" id="logoutForm"></form>
+	<div class="banner">
+		<h1 class="bannerHeader">Add Ingredient</h1>
+		<br>
+		<input class="logout" type="submit" value="Logout" form="logoutForm" />
+	</div>
+	<br>
+	<div class="addIngredientForm">
+		<form method="POST" th:action="@{/ingredients}" th:object="${ingredient}">
 			<label for="identifier">Ingredient Identifier: </label>
 			<input name="identifier" type="text" th:field="*{id}" />
 			<br>
@@ -20,18 +25,19 @@
 			<br>
 			<br>
 			<label for="types">Ingredient Type: </label> 
-			<select class = "ingredientType" th:field="*{type}" name="types">
+			<select class="ingredientType" th:field="*{type}" name="types">
 				<option th:each="ingredientType : ${IngredientTypes}" th:text="${ingredientType}" th:value="${ingredientType}" />
 			</select>
 			<br>
 			<br>
-			<button class="submit" type= "submit">Add new Ingredient</button>
+			<input class="submit" type="submit" value="Add Ingredient" />
 			<br>
 			<br>
-			<a href="/design">
-				<button class="submit">Go To Design Page</button>
-			</a>
-		</div>
-	</form>
+		</form>
+		<a href="/design">
+			<button class="submit">Go To Design Page</button>
+		</a>
+	</div>
 </body>
+
 </html>

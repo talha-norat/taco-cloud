@@ -147,3 +147,57 @@ input{
 ::-webkit-scrollbar {
   width: 3px;
 }
+
+.detailsLabels{
+	width: 150px;
+	height: 300px;
+	overflow: hidden;
+	float:left;
+	text-align: left;
+	display: inline-block;
+	margin-left: 45px;
+}
+
+.detailsLabel, .ccLabel{
+	display: block;
+	margin-bottom: 50px;
+	margin-top: 5px;
+}
+
+.detailsTextFields, .ccTextFields{
+	width: 300px;
+	overflow: hidden;
+	float:left;
+	text-align: left;
+}
+
+.detailsTextField, .ccTextField{
+	display: block;
+	font-size: 20px;
+	margin-bottom: 2px;
+}
+
+.ccLabels{
+	width: 150px;
+	overflow: hidden;
+	float:left;
+	text-align: left;
+	display: inline-block;
+	margin-left: 45px;
+}
+
+.logout{
+	float: right;
+	margin-right: 20px;
+	margin-top: -50px;
+	color: white;
+	background-color: #050c3f;
+	border: 2px solid white;
+	border-radius: 34px;
+	padding: 5px;
+	font-size: 15px;
+	width: 65px;
+	height: 65px;
+}
+
+

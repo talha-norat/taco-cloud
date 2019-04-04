@@ -8,6 +8,10 @@
 <body>
 	<div class="banner">
 		<h1 class="bannerHeader">Welcome</h1>
+		<br/>
+		<form method="POST" th:action="@{/logout}" id="logoutForm">
+      		<input class="logout" type="submit" value="Logout"/>
+    	</form>
 	</div>
 	<br />
 	<a href="/ingredients">
